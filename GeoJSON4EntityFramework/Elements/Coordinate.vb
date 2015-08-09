@@ -1,21 +1,28 @@
-﻿Public Class Coordinate
-    Sub New()
-        MyBase.New()
-    End Sub
+﻿'Imports Newtonsoft.Json
 
-    Sub New(_x As Double, _y As Double)
-        X = _x
-        Y = _y
-    End Sub
+Namespace Elements
+    '<JsonConverter(GetType(CoordinateConverter))>
+    Public Class Coordinate
 
-    Public ReadOnly Property Coordinate As Double()
-        Get
-            Return New Double() {X, Y}
-        End Get
-    End Property
+        Sub New()
+            MyBase.New()
+        End Sub
 
-    Public Property X As Double
+        Sub New(_x As Double, _y As Double)
+            X = _x
+            Y = _y
+        End Sub
 
-    Public Property Y As Double
+        Public ReadOnly Property Value As Double()
+            Get
+                Return New Double() {X, Y}
+            End Get
+        End Property
 
-End Class
+        '<JsonIgnore()>
+        Public Property X As Double
+
+        '<JsonIgnore()>
+        Public Property Y As Double
+    End Class
+End Namespace

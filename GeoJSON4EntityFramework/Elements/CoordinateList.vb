@@ -1,7 +1,9 @@
-﻿Public Class CoordinateList
-    Inherits List(Of Coordinate)
+﻿Namespace Elements
+    Public Class CoordinateList
+        Inherits List(Of Coordinate)
 
-    Sub AddNew(X As Double, Y As Double)
-        MyBase.Add(New Coordinate(X, Y))
-    End Sub
-End Class
+        Sub AddNew(X As Double, Y As Double)
+            MyBase.Add(New Coordinate(X, Y))
+        End Sub
+    End Class
+End Namespace
